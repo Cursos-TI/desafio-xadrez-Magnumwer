@@ -1,32 +1,49 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
-
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    int numero, i;
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+    printf("## Movimentando as Peças do xadrez ##\nDigite o numero da peça que você quer mover:\n1 - Torre\n2 - Bispo\n3 - Rainha\nDigite:\n");
+    scanf("%d", &numero);
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+    switch (numero)
+    {
+    case 1: // Movimento da torre
+        printf("Torre\n");
+        for (i = 0; i < 5; i++)
+        {
+            printf("Direita\n"); //Imprime a direção do movimento
+        }
+        break;
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    case 2: // Movimento do Bispo
+        printf("Bispo\n");
+        i = 0;
+        while (i <= 10)
+        {
+            printf("Cima\nDireita\n"); //Imprime a direção do movimento
+            i++;
+        }
+        break;
+        
+    case 3: //Movimento da Rainha
+        printf("Rainha\n");
+        i = 0;
+        do
+        {
+            printf("Esquerda\n"); //Imprime a direção do movimento
+            i++;
+        } while (i < 8);
+        
+        
+        break;
+    
+    default:
+        printf("Entrada invalida");
+        break;
+    }
 
     return 0;
 }

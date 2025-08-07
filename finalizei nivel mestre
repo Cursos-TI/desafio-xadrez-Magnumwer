@@ -1,0 +1,74 @@
+#include <stdio.h>
+
+
+void moverTorre(int casas) { 
+
+    if (casas > 0) { // Recursiva do movimento da torre
+        printf("Direita\n");
+        moverTorre(casas - 1);
+    }
+}
+
+void moverBispo(int casas) { 
+
+    if (casas > 0) { // Recursiva do movimento da Bispo
+        printf("Cima\nDireita\n");
+        moverBispo(casas - 1);
+    }
+}
+
+void moverRainha(int casas) { 
+
+    if (casas > 0) { // Recursiva do movimento da Rainha
+        printf("Esquerda\n");
+        moverRainha(casas - 1);
+    }
+}
+
+void moverCavalo(int casas) {
+    for (int i = 0, j = 0; i < casas; i++, j = 0) {
+        for (; j < 2; j++) {
+            printf("Cima\n");
+        }
+        printf("Direita\n");
+    }
+}
+
+int main() {
+
+    int numero;
+
+    printf("## Movimentando as Peças do xadrez ##\nDigite o numero da peça que você quer mover:\n1 - Torre\n2 - Bispo\n3 - Rainha\n4 - Cavalo\nDigite:\n");
+    scanf("%d", &numero);
+
+    switch (numero)
+    {
+    case 1: // Movimento da torre
+        printf("Torre\n");
+        moverTorre(5);
+        break;
+
+
+    case 2: // Movimento do Bispo
+        printf("Bispo\n");
+        moverBispo(10);
+        break;
+        
+    case 3: //Movimento da Rainha
+        printf("Rainha\n");
+        moverRainha(8);
+        break;
+
+
+    case 4: ////Movimento do Cavalo ( Loop Alinhado).
+        printf("Cavalo\n");
+        moverCavalo(1);
+        break;
+
+    default:
+        printf("Entrada invalida");
+        break;
+    }
+
+    return 0;
+}

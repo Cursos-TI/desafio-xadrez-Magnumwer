@@ -1,0 +1,67 @@
+#include <stdio.h>
+
+int main() {
+
+    int numero, i;
+
+    printf("## Movimentando as Peças do xadrez ##\nDigite o numero da peça que você quer mover:\n1 - Torre\n2 - Bispo\n3 - Rainha\n4 - Cavalo\nDigite:\n");
+    scanf("%d", &numero);
+
+    switch (numero)
+    {
+    case 1: // Movimento da torre
+        printf("Torre\n");
+        for (i = 0; i < 5; i++)
+        {
+            printf("Direita\n"); //Imprime a direção do movimento
+        }
+        break;
+
+
+    case 2: // Movimento do Bispo
+        printf("Bispo\n");
+        i = 0;
+        while (i <= 10)
+        {
+            printf("Cima\nDireita\n"); //Imprime a direção do movimento
+            i++;
+        }
+        break;
+        
+    case 3: //Movimento da Rainha
+        printf("Rainha\n");
+        i = 0;
+        do
+        {
+            printf("Esquerda\n"); //Imprime a direção do movimento
+            i++;
+        } while (i < 8);
+        
+        
+        break;
+
+    case 4: ////Movimento do Cavalo ( Loop Alinhado).
+        printf("Cavalo\n");
+        for (i = 0; i < 1; i++)
+        {
+            int j = 0;
+            while (j < 2)
+            {
+                printf("baixo\n"); //Imprime a direção do movimento
+                j++;
+            }
+            printf("esquerda\n"); //Imprime a direção do movimento
+            
+        }
+        break;
+        
+
+
+    
+    default:
+        printf("Entrada invalida");
+        break;
+    }
+
+    return 0;
+}
